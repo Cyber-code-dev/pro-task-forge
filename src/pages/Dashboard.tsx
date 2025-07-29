@@ -15,7 +15,36 @@ export interface Task {
 }
 
 const Dashboard = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([
+    {
+      id: 1,
+      title: "Terminer le projet React",
+      description: "Finaliser l'interface utilisateur et tester toutes les fonctionnalités",
+      completed: false,
+      created_at: "2024-01-15T10:30:00Z"
+    },
+    {
+      id: 2,
+      title: "Réviser le code backend",
+      description: "Vérifier la sécurité et optimiser les performances",
+      completed: true,
+      created_at: "2024-01-14T14:20:00Z"
+    },
+    {
+      id: 3,
+      title: "Préparer la présentation",
+      description: "Créer les slides pour la démonstration client",
+      completed: false,
+      created_at: "2024-01-16T09:15:00Z"
+    },
+    {
+      id: 4,
+      title: "Tester l'API Django",
+      description: "Valider tous les endpoints et la documentation",
+      completed: true,
+      created_at: "2024-01-13T16:45:00Z"
+    }
+  ]);
   const [isTaskDialogOpen, setIsTaskDialogOpen] = useState(false);
   const [isProfileDialogOpen, setIsProfileDialogOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
